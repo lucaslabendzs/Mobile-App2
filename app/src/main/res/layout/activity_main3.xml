@@ -1,22 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity3">
 
+    <!-- Título -->
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtTituloLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Minha Lista"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Contador de Progresso -->
+    <TextView
+        android:id="@+id/txtProgresso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 de 0 assistidos — 0%"
+        android:textSize="14sp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Opções de Filtro e Ordenação (Simples) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <!-- Spinner: Filtrar por Status -->
+        <Spinner
+            android:id="@+id/spinnerFiltro"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp" />
+
+        <!-- Spinner: Ordenação -->
+        <Spinner
+            android:id="@+id/spinnerOrdenacao"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp" />
+
+    </LinearLayout>
+
+    <!-- Campo de Busca -->
+    <EditText
+        android:id="@+id/edtBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Buscar filme..."
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp" />
+
+    <!-- ListView: Exibe os filmes -->
+    <ListView
+        android:id="@+id/listViewFilmes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Botão: Adicionar Novo Filme -->
+    <Button
+        android:id="@+id/btnAdicionar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="+ Adicionar Filme" />
+
+</LinearLayout>

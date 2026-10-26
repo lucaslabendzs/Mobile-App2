@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout de um item da lista de filmes -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <!-- Imagem do filme -->
+    <ImageView
+        android:id="@+id/imgFilme"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="Imagem do filme"
+        android:scaleType="centerCrop" />
+
+    <!-- Informações do filme (nome, tipo, status) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <!-- Nome do filme -->
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Tipo (Filme ou Série) -->
+        <TextView
+            android:id="@+id/txtTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+        <!-- Status (Assistido / Não assistido) -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

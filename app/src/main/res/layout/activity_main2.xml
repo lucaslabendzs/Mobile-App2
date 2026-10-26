@@ -1,22 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".MainActivity2">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <!-- ScrollView para formulário longo -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título dinâmico: "Novo Filme" ou "Editar Filme" -->
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Novo Filme"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Campo: Nome -->
+            <EditText
+                android:id="@+id/edtNome"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Nome do filme/série"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Campo: Tipo (Spinner: Filme ou Série) -->
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Campo: Status (CheckBox: Já assistido?) -->
+            <CheckBox
+                android:id="@+id/cbAssistido"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="Já assistiu?"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Campo: Data de Visualização (somente leitura, alterada automaticamente) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de visualização:"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/txtData"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="--"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="15dp" />
+
+            <!-- Seção: Imagem -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Imagem do Filme"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- ImageView: Pré-visualização -->
+            <ImageView
+                android:id="@+id/imgPreview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Pré-visualização da imagem"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Botão: Escolher Imagem -->
+            <Button
+                android:id="@+id/btnSelecionarImagem"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Escolher Imagem"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Botões de Ação (fixos na parte inferior) -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerenciar Sua Lista"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <!-- Botão: Salvar -->
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="Salvar"
+            android:layout_marginEnd="5dp" />
+
+        <!-- Botão: Cancelar -->
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="Cancelar"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <!-- Botão: Excluir (visível só em modo edição) -->
+        <Button
+            android:id="@+id/btnExcluir"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="Excluir"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_marginStart="5dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>
