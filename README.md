@@ -15,3 +15,5 @@ Regras de Negócio:
   GRR20245121
 - **Renan Teles de Oliveira**  
   GRR20246258
+- **Kauan Calegari**  
+  GRR20243595
